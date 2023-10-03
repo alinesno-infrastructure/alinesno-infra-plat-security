@@ -8,16 +8,15 @@
     <OperationWorkspaceService />
 
     <!-- 运行应用列表 -->
-    <OperationWorkspaceApps />
+    <DashboardNotices />
 
   </div>
 </template>
 
 <script setup name="Index">
 
-
 import OperationWorkspaceCountStaitcs from './operation-workspace/countStatics.vue'
-import OperationWorkspaceApps from './operation-workspace/apps.vue'
 import OperationWorkspaceService from './operation-workspace/service.vue'
+import DashboardNotices from './operation-workspace/notices.vue'
 
 </script>
