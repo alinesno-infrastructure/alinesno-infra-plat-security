@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-      currentApplicationName: '安全感触服务'
+      currentApplicationName: '一体化安全感触服务'
     }
   },
   mounted () {

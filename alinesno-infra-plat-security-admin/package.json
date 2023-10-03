@@ -1,7 +1,7 @@
 {
   "name": "alinesno-infra-plat-security-admin",
   "version": "1.0.0",
-  "description": "安全感触服务",
+  "description": "一体化安全感触服务",
   "author": "LuoXiaoDong",
   "license": "Apache-2.0",
   "scripts": {
