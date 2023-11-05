@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,6 +16,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("security_report")
+@Data
 public class SecurityReportEntity extends InfraBaseEntity {
 
     // fields
@@ -21,85 +25,47 @@ public class SecurityReportEntity extends InfraBaseEntity {
      * 状态
      */
     @TableField("status")
+	@ColumnType(length=1)
+	@ColumnComment("状态")
     private String status;
 
     /**
      * 所属类型
      */
     @TableField("belonging_type")
+	@ColumnType(length=20)
+	@ColumnComment("所属类型")
     private String belongingType;
 
     /**
      * 安全项目
      */
     @TableField("security_project")
+	@ColumnType(length=255)
+	@ColumnComment("安全项目")
     private String securityProject;
 
     /**
      * 风险信息
      */
     @TableField("risk_info")
+	@ColumnType(length=255)
+	@ColumnComment("风险信息")
     private String riskInfo;
 
     /**
      * 风险标识
      */
     @TableField("risk_identifier")
+	@ColumnType(length=50)
+	@ColumnComment("风险标识")
     private String riskIdentifier;
 
     /**
      * 风险数
      */
     @TableField("risk_count")
+	@ColumnType(length=10)
+	@ColumnComment("风险数")
     private Long riskCount;
-
-    // getter and setter methods
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getBelongingType() {
-        return belongingType;
-    }
-
-    public void setBelongingType(String belongingType) {
-        this.belongingType = belongingType;
-    }
-
-    public String getSecurityProject() {
-        return securityProject;
-    }
-
-    public void setSecurityProject(String securityProject) {
-        this.securityProject = securityProject;
-    }
-
-    public String getRiskInfo() {
-        return riskInfo;
-    }
-
-    public void setRiskInfo(String riskInfo) {
-        this.riskInfo = riskInfo;
-    }
-
-    public String getRiskIdentifier() {
-        return riskIdentifier;
-    }
-
-    public void setRiskIdentifier(String riskIdentifier) {
-        this.riskIdentifier = riskIdentifier;
-    }
-
-    public Long getRiskCount() {
-        return riskCount;
-    }
-
-    public void setRiskCount(Long riskCount) {
-        this.riskCount = riskCount;
-    }
 }

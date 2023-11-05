@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -15,6 +18,7 @@ import java.util.Date;
  * @version 1.0.0
  */
 @TableName("logger_service")
+@Data
 public class LoggerServiceEntity extends InfraBaseEntity {
 
     // fields
@@ -23,113 +27,63 @@ public class LoggerServiceEntity extends InfraBaseEntity {
      * 应用名称
      */
     @TableField("app_name")
+	@ColumnType(length=50)
+	@ColumnComment("应用名称")
     private String appName;
 
     /**
      * 异常请求
      */
     @TableField("exception_request")
+	@ColumnType(length=255)
+	@ColumnComment("异常请求")
     private String exceptionRequest;
 
     /**
      * 风险类型
      */
     @TableField("risk_type")
+	@ColumnType(length=20)
+	@ColumnComment("风险类型")
     private String riskType;
 
     /**
      * 风险时间
      */
     @TableField("risk_time")
+	@ColumnType(length=19)
+	@ColumnComment("风险时间")
     private Date riskTime;
 
     /**
      * 攻击IP
      */
     @TableField("attack_ip")
+	@ColumnType(length=15)
+	@ColumnComment("攻击IP")
     private String attackIp;
 
     /**
      * 所属应用服务
      */
     @TableField("belonging_service")
+	@ColumnType(length=50)
+	@ColumnComment("所属应用服务")
     private String belongingService;
 
     /**
      * 所属应用信息
      */
     @TableField("belonging_app_info")
+	@ColumnType(length=255)
+	@ColumnComment("所属应用信息")
     private String belongingAppInfo;
 
     /**
      * 异常信息
      */
     @TableField("exception_info")
+	@ColumnType(length=255)
+	@ColumnComment("异常信息")
     private String exceptionInfo;
-
-    // getter and setter methods
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
-    public String getExceptionRequest() {
-        return exceptionRequest;
-    }
-
-    public void setExceptionRequest(String exceptionRequest) {
-        this.exceptionRequest = exceptionRequest;
-    }
-
-    public String getRiskType() {
-        return riskType;
-    }
-
-    public void setRiskType(String riskType) {
-        this.riskType = riskType;
-    }
-
-    public Date getRiskTime() {
-        return riskTime;
-    }
-
-    public void setRiskTime(Date riskTime) {
-        this.riskTime = riskTime;
-    }
-
-    public String getAttackIp() {
-        return attackIp;
-    }
-
-    public void setAttackIp(String attackIp) {
-        this.attackIp = attackIp;
-    }
-
-    public String getBelongingService() {
-        return belongingService;
-    }
-
-    public void setBelongingService(String belongingService) {
-        this.belongingService = belongingService;
-    }
-
-    public String getBelongingAppInfo() {
-        return belongingAppInfo;
-    }
-
-    public void setBelongingAppInfo(String belongingAppInfo) {
-        this.belongingAppInfo = belongingAppInfo;
-    }
-
-    public String getExceptionInfo() {
-        return exceptionInfo;
-    }
-
-    public void setExceptionInfo(String exceptionInfo) {
-        this.exceptionInfo = exceptionInfo;
-    }
 }

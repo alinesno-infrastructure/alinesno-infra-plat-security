@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,6 +16,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("security_service")
+@Data
 public class SecurityServiceEntity extends InfraBaseEntity {
 
     // fields
@@ -21,99 +25,55 @@ public class SecurityServiceEntity extends InfraBaseEntity {
      * 服务名称
      */
     @TableField("service_name")
+	@ColumnType(length=255)
+	@ColumnComment("服务名称")
     private String serviceName;
 
     /**
      * 服务标识
      */
     @TableField("service_identifier")
+	@ColumnType(length=50)
+	@ColumnComment("服务标识")
     private String serviceIdentifier;
 
     /**
      * 应用名称
      */
     @TableField("app_name")
+	@ColumnType(length=50)
+	@ColumnComment("应用名称")
     private String appName;
 
     /**
      * 应用状态
      */
     @TableField("app_status")
+	@ColumnType(length=20)
+	@ColumnComment("应用状态")
     private String appStatus;
 
     /**
      * 应用运行状态
      */
     @TableField("app_running_status")
+	@ColumnType(length=1)
+	@ColumnComment("应用运行状态")
     private String appRunningStatus;
 
     /**
      * 异常数
      */
     @TableField("exception_count")
+	@ColumnType(length=255)
+	@ColumnComment("异常数")
     private String exceptionCount;
 
     /**
      * 风险数
      */
     @TableField("risk_count")
+	@ColumnType(length=10)
+	@ColumnComment("风险数")
     private String riskCount;
-
-    // getter and setter methods
-
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    public String getServiceIdentifier() {
-        return serviceIdentifier;
-    }
-
-    public void setServiceIdentifier(String serviceIdentifier) {
-        this.serviceIdentifier = serviceIdentifier;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
-    public String getAppStatus() {
-        return appStatus;
-    }
-
-    public void setAppStatus(String appStatus) {
-        this.appStatus = appStatus;
-    }
-
-    public String getAppRunningStatus() {
-        return appRunningStatus;
-    }
-
-    public void setAppRunningStatus(String appRunningStatus) {
-        this.appRunningStatus = appRunningStatus;
-    }
-
-    public String getExceptionCount() {
-        return exceptionCount;
-    }
-
-    public void setExceptionCount(String exceptionCount) {
-        this.exceptionCount = exceptionCount;
-    }
-
-    public String getRiskCount() {
-        return riskCount;
-    }
-
-    public void setRiskCount(String riskCount) {
-        this.riskCount = riskCount;
-    }
 }

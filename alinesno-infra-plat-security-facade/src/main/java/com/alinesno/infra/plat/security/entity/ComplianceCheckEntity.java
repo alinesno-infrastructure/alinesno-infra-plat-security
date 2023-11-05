@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -14,6 +17,7 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
  * @version 1.0.0
  */
 @TableName("compliance_check")
+@Data
 public class ComplianceCheckEntity extends InfraBaseEntity {
 
     // fields
@@ -23,6 +27,8 @@ public class ComplianceCheckEntity extends InfraBaseEntity {
      */
     @Excel(name = "编号")
     @TableField("item_id")
+	@ColumnType(length=50)
+	@ColumnComment("编号")
     private Long itemId;
 
     /**
@@ -30,6 +36,8 @@ public class ComplianceCheckEntity extends InfraBaseEntity {
      */
     @Excel(name = "检测项目")
     @TableField("check_project")
+	@ColumnType(length=255)
+	@ColumnComment("检测项目")
     private String checkProject;
 
     /**
@@ -37,6 +45,8 @@ public class ComplianceCheckEntity extends InfraBaseEntity {
      */
     @Excel(name = "检测项分类")
     @TableField("check_category")
+	@ColumnType(length=50)
+	@ColumnComment("检测项分类")
     private String checkCategory;
 
     /**
@@ -44,6 +54,8 @@ public class ComplianceCheckEntity extends InfraBaseEntity {
      */
     @Excel(name = "合规状态")
     @TableField("compliance_status")
+	@ColumnType(length=10)
+	@ColumnComment("合规状态")
     private String complianceStatus;
 
     /**
@@ -51,52 +63,7 @@ public class ComplianceCheckEntity extends InfraBaseEntity {
      */
     @Excel(name = "改进建设")
     @TableField("improvement_construction")
+	@ColumnType(length=255)
+	@ColumnComment("改进建设")
     private String improvementConstruction;
-
-    // getter and setter
-
-    public Long getItemId() {
-        return this.itemId;
-    }
-
-    public ComplianceCheckEntity setItemId(Long arg) {
-        this.itemId = arg;
-        return this;
-    }
-
-    public String getCheckProject() {
-        return this.checkProject;
-    }
-
-    public ComplianceCheckEntity setCheckProject(String arg) {
-        this.checkProject = arg;
-        return this;
-    }
-
-    public String getCheckCategory() {
-        return this.checkCategory;
-    }
-
-    public ComplianceCheckEntity setCheckCategory(String arg) {
-        this.checkCategory = arg;
-        return this;
-    }
-
-    public String getComplianceStatus() {
-        return this.complianceStatus;
-    }
-
-    public ComplianceCheckEntity setComplianceStatus(String arg) {
-        this.complianceStatus = arg;
-        return this;
-    }
-
-    public String getImprovementConstruction() {
-        return this.improvementConstruction;
-    }
-
-    public ComplianceCheckEntity setImprovementConstruction(String arg) {
-        this.improvementConstruction = arg;
-        return this;
-    }
 }

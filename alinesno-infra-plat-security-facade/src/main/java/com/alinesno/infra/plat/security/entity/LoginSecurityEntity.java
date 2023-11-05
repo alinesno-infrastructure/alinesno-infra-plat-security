@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,6 +16,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("login_security")
+@Data
 public class LoginSecurityEntity extends InfraBaseEntity {
 
     // fields
@@ -21,85 +25,47 @@ public class LoginSecurityEntity extends InfraBaseEntity {
      * 登陆IP
      */
     @TableField("login_ip")
+	@ColumnType(length=15)
+	@ColumnComment("登陆IP")
     private String loginIp;
 
     /**
      * 登陆应用
      */
     @TableField("login_app")
+	@ColumnType(length=20)
+	@ColumnComment("登陆应用")
     private String loginApp;
 
     /**
      * 登陆账号
      */
     @TableField("login_account")
+	@ColumnType(length=50)
+	@ColumnComment("登陆账号")
     private String loginAccount;
 
     /**
      * 登陆异常风险
      */
     @TableField("login_exception_risk")
+	@ColumnType(length=1)
+	@ColumnComment("登陆异常风险")
     private String loginExceptionRisk;
 
     /**
      * 登陆位置
      */
     @TableField("login_location")
+	@ColumnType(length=50)
+	@ColumnComment("登陆位置")
     private String loginLocation;
 
     /**
      * 风险是否处理
      */
     @TableField("is_risk_handled")
+	@ColumnType(length=1)
+	@ColumnComment("风险是否处理")
     private Integer isRiskHandled;
-
-    // getter and setter methods
-
-    public String getLoginIp() {
-        return loginIp;
-    }
-
-    public void setLoginIp(String loginIp) {
-        this.loginIp = loginIp;
-    }
-
-    public String getLoginApp() {
-        return loginApp;
-    }
-
-    public void setLoginApp(String loginApp) {
-        this.loginApp = loginApp;
-    }
-
-    public String getLoginAccount() {
-        return loginAccount;
-    }
-
-    public void setLoginAccount(String loginAccount) {
-        this.loginAccount = loginAccount;
-    }
-
-    public String getLoginExceptionRisk() {
-        return loginExceptionRisk;
-    }
-
-    public void setLoginExceptionRisk(String loginExceptionRisk) {
-        this.loginExceptionRisk = loginExceptionRisk;
-    }
-
-    public String getLoginLocation() {
-        return loginLocation;
-    }
-
-    public void setLoginLocation(String loginLocation) {
-        this.loginLocation = loginLocation;
-    }
-
-    public Integer getIsRiskHandled() {
-        return isRiskHandled;
-    }
-
-    public void setIsRiskHandled(Integer isRiskHandled) {
-        this.isRiskHandled = isRiskHandled;
-    }
 }

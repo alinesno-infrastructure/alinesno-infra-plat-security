@@ -1,5 +1,8 @@
 package com.alinesno.infra.plat.security.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
@@ -15,162 +18,78 @@ import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
  * @version 1.0.0
  */
 @TableName("code_rule")
+@Data
 public class CodeRuleEntity extends InfraBaseEntity {
     
     // 开始行数
     @TableField("begin_line_number")
+	@ColumnType(length=10)
+	@ColumnComment("开始行数")
     private Long beginLineNumber;
 
     // 结束行数
     @TableField("end_line_number")
+	@ColumnType(length=255)
+	@ColumnComment("结束行数")
     private Long endLineNumber;
 
     // 开始字符
     @TableField("begin_character_number")
+	@ColumnType(length=2)
+	@ColumnComment("开始字符")
     private Long beginCharacterNumber;
 
     // 结束字符
     @TableField("end_character_number")
+	@ColumnType(length=10)
+	@ColumnComment("结束字符")
     private Long endCharacterNumber;
 
     // 规范名称
     @TableField("rule_name")
+	@ColumnType(length=50)
+	@ColumnComment("规范名称")
     private String ruleName;
 
     // 规范集全名
     @TableField("ruleset_name")
+	@ColumnType(length=50)
+	@ColumnComment("规范集全名")
     private String rulesetName;
 
     // 包名
     @TableField("package_name")
+	@ColumnType(length=50)
+	@ColumnComment("包名")
     private String packageName;
 
     // 类名
     @TableField("class_name")
+	@ColumnType(length=255)
+	@ColumnComment("类名")
     private String className;
 
     // 异常信息
     @TableField("exception_info")
+	@ColumnType(length=255)
+	@ColumnComment("异常信息")
     private String exceptionInfo;
 
     // 风险等级
     @TableField("risk_level")
+	@ColumnType(length=1)
+	@ColumnComment("风险等级")
     private String riskLevel;
 
     // 应用名称
     @TableField("app_name")
+	@ColumnType(length=50)
+	@ColumnComment("应用名称")
     private String appName;
 
     // 所属应用信息
     @TableField("belonging_app_info")
+	@ColumnType(length=255)
+	@ColumnComment("所属应用信息")
     private String belongingAppInfo;
-
-    // getter and setter
-    public Long getBeginLineNumber() {
-        return this.beginLineNumber;
-    }
-
-    public CodeRuleEntity setBeginLineNumber(Long beginLineNumber) {
-        this.beginLineNumber = beginLineNumber;
-        return this;
-    }
-
-    public Long getEndLineNumber() {
-        return this.endLineNumber;
-    }
-
-    public CodeRuleEntity setEndLineNumber(Long endLineNumber) {
-        this.endLineNumber = endLineNumber;
-        return this;
-    }
-
-    public Long getBeginCharacterNumber() {
-        return this.beginCharacterNumber;
-    }
-
-    public CodeRuleEntity setBeginCharacterNumber(Long beginCharacterNumber) {
-        this.beginCharacterNumber = beginCharacterNumber;
-        return this;
-    }
-
-    public Long getEndCharacterNumber() {
-        return this.endCharacterNumber;
-    }
-
-    public CodeRuleEntity setEndCharacterNumber(Long endCharacterNumber) {
-        this.endCharacterNumber = endCharacterNumber;
-        return this;
-    }
-
-    public String getRuleName() {
-        return this.ruleName;
-    }
-
-    public CodeRuleEntity setRuleName(String ruleName) {
-        this.ruleName = ruleName;
-        return this;
-    }
-
-    public String getRulesetName() {
-        return this.rulesetName;
-    }
-
-    public CodeRuleEntity setRulesetName(String rulesetName) {
-        this.rulesetName = rulesetName;
-        return this;
-    }
-
-    public String getPackageName() {
-        return this.packageName;
-    }
-
-    public CodeRuleEntity setPackageName(String packageName) {
-        this.packageName = packageName;
-        return this;
-    }
-
-    public String getClassName() {
-        return this.className;
-    }
-
-    public CodeRuleEntity setClassName(String className) {
-        this.className = className;
-        return this;
-    }
-
-    public String getExceptionInfo() {
-        return this.exceptionInfo;
-    }
-
-    public CodeRuleEntity setExceptionInfo(String exceptionInfo) {
-        this.exceptionInfo = exceptionInfo;
-        return this;
-    }
-
-    public String getRiskLevel() {
-        return this.riskLevel;
-    }
-
-    public CodeRuleEntity setRiskLevel(String riskLevel) {
-        this.riskLevel = riskLevel;
-        return this;
-    }
-
-    public String getAppName() {
-        return this.appName;
-    }
-
-    public CodeRuleEntity setAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    public String getBelongingAppInfo() {
-        return this.belongingAppInfo;
-    }
-
-    public CodeRuleEntity setBelongingAppInfo(String belongingAppInfo) {
-        this.belongingAppInfo = belongingAppInfo;
-        return this;
-    }
 }
