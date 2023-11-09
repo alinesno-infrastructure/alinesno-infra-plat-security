@@ -19,6 +19,18 @@ spring:
     restart:
       enabled: true
 
+actable:
+  table:
+    auto: update
+  model:
+    pack: com.alinesno.infra.plat.security.entity;
+  database:
+    type: mysql
+  index:
+    prefix: alinesno_plat_security_idx_
+  unique:
+    prefix: alinesno_plat_security_uni_
+
 # sa-token配置
 sa-token:
   token-name: satoken
