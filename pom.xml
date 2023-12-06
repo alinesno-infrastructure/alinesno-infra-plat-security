@@ -25,12 +25,12 @@
         <module>alinesno-infra-plat-security-facade</module>  <!-- 接口和引用 -->
         <module>alinesno-infra-plat-security-domain</module>  <!-- 领域服务 -->
         <module>alinesno-infra-plat-security-adapter</module> <!-- 适配层 -->
-        <module>alinesno-infra-plat-security-api</module>  <!-- 接口服务 -->
+        <module>alinesno-infra-plat-security-gateway</module>  <!-- 接口服务 -->
         <module>alinesno-infra-plat-security-client</module>  <!-- 对外引用 -->
         <module>alinesno-infra-plat-security-boot</module>  <!-- 启动服务 -->
 
         <!-- 前端服务
-        <module>alinesno-infra-plat-security-admin</module>
+        <module>alinesno-infra-plat-security-ui</module>
         -->
     </modules>
 

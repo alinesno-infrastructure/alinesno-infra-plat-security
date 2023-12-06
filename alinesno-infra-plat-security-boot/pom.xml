@@ -33,7 +33,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.alinesno.infra.plat</groupId>
-			<artifactId>alinesno-infra-plat-security-api</artifactId>
+			<artifactId>alinesno-infra-plat-security-gateway</artifactId>
 			<version>${revision}</version>
 		</dependency>
 
