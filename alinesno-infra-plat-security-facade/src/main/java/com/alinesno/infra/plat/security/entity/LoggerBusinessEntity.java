@@ -17,9 +17,9 @@ import java.util.Date;
  * @author luoxiaodong
  * @version 1.0.0
  */
-@TableName("logger_service")
+@TableName("logger_business")
 @Data
-public class LoggerServiceEntity extends InfraBaseEntity {
+public class LoggerBusinessEntity extends InfraBaseEntity {
 
     // fields
 

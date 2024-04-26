@@ -15,9 +15,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @author luoxiaodong
  * @version 1.0.0
  */
-@TableName("notice_settings")
+@TableName("notice_setting")
 @Data
-public class NoticeSettingsEntity extends InfraBaseEntity {
+public class NoticeSettingEntity extends InfraBaseEntity {
 
     // fields
 

@@ -1,8 +1,5 @@
 package com.alinesno.infra.common.web.adapter.login.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alinesno.infra.common.facade.response.AjaxResult;
 import com.alinesno.infra.common.web.adapter.dto.LoginBodyDto;
 import com.alinesno.infra.common.web.adapter.dto.menus.Menu;
@@ -28,8 +25,7 @@ public class CommonLoginController {
      * @return 结果
      */
     @PostMapping("/login")
-    public AjaxResult login(@RequestBody LoginBodyDto loginBody)
-    {
+    public AjaxResult login(@RequestBody LoginBodyDto loginBody) {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
         String token = UUID.randomUUID().toString() ;
@@ -134,34 +130,33 @@ public class CommonLoginController {
                 new Menu("Dashboard", "index", false, false , "dashboard", new Menu.Meta("概览", "dashboard", false, null))
         ));
 
-        Menu systemMenu = new Menu("System", "/system", false, "noRedirect", "Layout", true, new Menu.Meta("风险管理", "post", false, null),
+        Menu systemMenu = new Menu("Security", "/security", false, "noRedirect", "Layout", true, new Menu.Meta("风险管理", "post", false, null),
                 List.of(
-                        new Menu("Tenant", "system/tenant/index", false,false,  "system/tenant/index", new Menu.Meta("日志分析", "tree", false, null)),
-                        new Menu("User", "system/user/index", false,false,  "system/user/index", new Menu.Meta("登陆风险", "user", false, null)),
-                        new Menu("Tenant", "system/tenant/index", false,false,  "system/tenant/index", new Menu.Meta("攻击分析", "tree", false, null)),
-                        new Menu("Tenant", "system/tenant/index", false,false,  "system/tenant/index", new Menu.Meta("代码风险", "tree", false, null)),
-                        new Menu("Tenant", "system/tenant/index", false,false,  "system/tenant/index", new Menu.Meta("规范分析", "tree", false, null))
-
+                        new Menu("LoggerBusiness", "plat/security/logger/business/index", false,false,  "system/tenant/index", new Menu.Meta("日志分析", "tree", false, null)),
+                        new Menu("LoggerLogin", "plat/security/logger/login/index", false,false,  "system/user/index", new Menu.Meta("登陆风险", "user", false, null)),
+                        new Menu("LoggerNginx", "plat/security/logger/nginx/index", false,false,  "system/tenant/index", new Menu.Meta("攻击分析", "tree", false, null)),
+                        new Menu("CodeOwasp", "plat/security/code/owasp/index", false,false,  "system/tenant/index", new Menu.Meta("代码风险", "tree", false, null)),
+                        new Menu("CodeRule", "plat/security/code/rule/index", false,false,  "system/tenant/index", new Menu.Meta("规范分析", "tree", false, null))
                 ));
 
-        Menu serviceMenu = new Menu("Log", "/log", false, "noRedirect", "Layout", true, new Menu.Meta("安全防护", "log", false, null),
+        Menu serviceMenu = new Menu("Defense", "/defense", false, "noRedirect", "Layout", true, new Menu.Meta("安全防护", "log", false, null),
                         List.of(
-                                new Menu("Operlog", "monitor/operlog/index", false,false, "monitor/operlog/index", new Menu.Meta("服务防御", "form", false, null)),
-                                new Menu("Logininfor", "monitor/logininfor/index", false,false, "monitor/logininfor/index", new Menu.Meta("请求防护", "logininfor", false, null))
+                                new Menu("ServerDefense", "plat/security/defense/server/index", false,false, "monitor/operlog/index", new Menu.Meta("服务防御", "form", false, null)),
+                                new Menu("NginxDefense", "plat/security/defense/nginx/index", false,false, "monitor/logininfor/index", new Menu.Meta("请求防护", "logininfor", false, null))
                         ));
 
-        Menu monitorMenu = new Menu("Monitor", "/monitor", false, "noRedirect", "Layout", true, new Menu.Meta("资产管理", "monitor", false, null),
+        Menu monitorMenu = new Menu("Assets", "/assets", false, "noRedirect", "Layout", true, new Menu.Meta("资产管理", "monitor", false, null),
                 List.of(
-                        new Menu("Online", "monitor/online/index", false,false, "monitor/online/index", new Menu.Meta("服务资产", "online", false, null)),
-                        new Menu("Cache", "monitor/cache/index", false,false, "monitor/cache/index", new Menu.Meta("容器资产", "redis", false, null))
+                        new Menu("SecurityServer", "plat/security/assets/server/index", false,false, "monitor/online/index", new Menu.Meta("服务资产", "online", false, null)),
+                        new Menu("SecurityContainer", "plat/security/assets/container/index", false,false, "monitor/cache/index", new Menu.Meta("容器资产", "redis", false, null))
                 ));
 
-        Menu themeMenu = new Menu("Theme", "/theme", false, "noRedirect", "Layout", true, new Menu.Meta("合规配置", "tool", false, null),
+        Menu themeMenu = new Menu("Config", "/config", false, "noRedirect", "Layout", true, new Menu.Meta("合规配置", "tool", false, null),
                 List.of(
-                        new Menu("Build", "tool/build/index", false,false, "tool/build/index", new Menu.Meta("运行配置", "build", false, null)),
-                        new Menu("Swagger", "tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("合规检查", "swagger", false, null)),
-                        new Menu("Swagger", "tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("通知设置", "swagger", false, null)),
-                        new Menu("Swagger", "tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("安全报告", "swagger", false, null))
+                        new Menu("RunConfig", "plat/security/tool/build/index", false,false, "tool/build/index", new Menu.Meta("运行配置", "build", false, null)),
+                        new Menu("ComplianceCheck", "plat/security/tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("合规检查", "swagger", false, null)),
+                        new Menu("NoticeSetting", "plat/security/tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("通知设置", "swagger", false, null)),
+                        new Menu("SecurityReport", "plat/security/tool/swagger/index",false, false, "tool/swagger/index", new Menu.Meta("安全报告", "swagger", false, null))
                 ));
 
         List<Menu> menus = List.of(dashboardMenu , systemMenu, serviceMenu , monitorMenu, themeMenu);

@@ -15,9 +15,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @author luoxiaodong
  * @version 1.0.0
  */
-@TableName("security_service")
+@TableName("security_business")
 @Data
-public class SecurityServiceEntity extends InfraBaseEntity {
+public class SecurityBusinessEntity extends InfraBaseEntity {
 
     // fields
 

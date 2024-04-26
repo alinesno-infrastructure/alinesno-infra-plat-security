@@ -28,6 +28,14 @@
 			<version>${revision}</version>
 		</dependency>
 
+		<!-- 扩展模块_start -->
+		<dependency>
+			<groupId>com.alinesno.infra.common</groupId>
+			<artifactId>alinesno-infra-common-extend-excel</artifactId>
+			<version>${revision}</version>
+		</dependency>
+		<!-- 扩展模块_end -->
+
 	</dependencies>
 
 </project>
