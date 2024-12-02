@@ -5,16 +5,17 @@ server:
 spring:
   application:
     name: alinesno-infra-plat-security-boot
+    id: 1863343810153467904
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3309/dev_alinesno_infra_plat_security_v100?characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/dev_alinesno_infra_plat_security_v100?characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowMultiQueries=true
     username: root
     password: adminer
   data:
     redis:
       host: 127.0.0.1
       port: 6379
-#      password: aip@local
+      password: aip@local
   devtools:
     restart:
       enabled: true
@@ -33,7 +34,7 @@ actable:
 
 # sa-token配置
 sa-token:
-  token-name: satoken
+  token-name: Authorization
   host-path: http://alinesno-infra-base-identity-auth-application.beta.base.infra.linesno.com
   sso:
     auth-url: ${sa-token.host-path}/login
@@ -42,4 +43,15 @@ sa-token:
     slo-url: ${sa-token.host-path}/sso/signout
     get-data-url: ${sa-token.host-path}/sso/getData
   sign:
-    secret-key:
+    secret-key: kQwIOrYvnXmSDkwEiFngrKidMcdrgKor
+
+# wechat token
+alinesno:
+  security:
+    # 排除路径
+    excludes:
+      - /sso/**
+      - /api/infra/base/platform/provider/**
+  infra:
+    gateway:
+      host: http://alinesno-infra-base-gateway-proxy-application.beta.base.infra.linesno.com
