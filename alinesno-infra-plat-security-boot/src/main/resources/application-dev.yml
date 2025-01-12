@@ -51,6 +51,7 @@ alinesno:
     # 排除路径
     excludes:
       - /sso/**
+      - /logout
       - /api/infra/base/platform/provider/**
   infra:
     gateway:
