@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("com.alinesno.infra.plat.security.mapper")
 @ForestScan({
         "com.alinesno.infra.common.web.adapter.base.consumer" ,
-        "com.alinesno.infra.base.platform.adapter"
 })
 @EnableInfraSsoApi
 @Configuration
